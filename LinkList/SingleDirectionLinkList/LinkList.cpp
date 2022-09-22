@@ -163,6 +163,8 @@ void LinkList::selection_sort() {
     Node *now = beforeMin->next;     // now node is the min node.
     Node *nowNext =
         now->next; // min node's next node. (min node never be nullptr).
+                   // this->swap(beforeStart->next, beforeMin->next);
+                   // beforeStart = beforeStart->next;
     if (start == beforeMin) {
       // side by side, swap two nearing nodes.
       beforeStart->next = now;
@@ -196,6 +198,7 @@ void LinkList::quick_sort(Node *start, Node *end) {
   }
   Node *left = start;
   Node *right = end;
+  int len = getDistance(left, right);
 }
 
 Node *LinkList::findFirstNode(int data) {
@@ -220,7 +223,7 @@ void LinkList::printAllNodes() {
     cout << "(" << now->data << ", " << now << "), " << endl;
     now = now->next;
   }
-  cout << "(" << now->data << "," << now << ")]" << endl;
+  cout << "(" << now->data << ", " << now << ")]" << endl;
 }
 
 const bool LinkList::operator==(const LinkList &other) {
@@ -249,3 +252,13 @@ Node *LinkList::operator[](int index) { return this->getNode(index); }
 int LinkList::length() const { return this->_length; }
 
 Node *LinkList::getpHead() const { return this->pHead; }
+
+int LinkList::getDistance(Node *a, Node *b) const {
+  int count = 0;
+  Node *now = a;
+  while (a != nullptr and now != b) {
+    now = now->next;
+    count++;
+  }
+  return count;
+}

@@ -95,7 +95,7 @@ public:
   void swap(int a, int b);
   // compute the distance between two nodes.
 
-  void getDistance(Node *, Node *);
+  int getDistance(Node *, Node *) const;
 
   // get the index of the node.
   int getIndex(Node *node);
