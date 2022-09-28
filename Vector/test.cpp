@@ -4,6 +4,8 @@
 using namespace std;
 
 int main() {
-  int a = 1;
-  cout << sizeof(int);
+  vector<int> v(100);
+  vector<int>::iterator i = v.begin();
+  i++;
+  i.base();
 }

@@ -1,7 +1,7 @@
 ---
 title: 测试报告
 author: 葛骏
-date: 2022-09-26
+date: 2022-09-28
 CJKmainfont: Noto Sans CJK SC
 mainfont: Fira Code
 ---
@@ -21,45 +21,14 @@ mainfont: Fira Code
 - 修改(修改某一个特定值)
 - 查询(打印)
 
+## 上机实验添加代码
+- 删除(remove): 通过数据删除
+- 删除全部(removeAll): 通过数据全部删除
+
 测试代码:
 
-```cpp
-void print(string msg) {
-  cout << msg << endl;
-  for (int i = 0; i < v.size(); i++) {
-    cout << v[i] << " ";
-  }
-  cout << endl;
-  cout << "size: " << v.size() << endl;
-  cout << "capacity: " << v.capacity() << endl;
-}
-
-int main() {
-  srand(time(NULL));
-  for (int i = 0; i < 10; i++) {
-    v.pushBack(rand() % 1000);
-  }
-  print("insert 10 random numbers");
-
-  v.insert(3, 2333);
-  print("insert 2333 at index 3");
-
-  v.erase(4);
-  print("erase the element at index 4");
-  v[5] = 666;
-
-  print("set the element at index 5 to 666");
-  cout << "Is the vector sorted? " << (v.isSorted() ? "Yes" : "No") << endl;
-
-  v.sort();
-  print("sort the vector");
-  cout << "Is the vector sorted? " << (v.isSorted() ? "Yes" : "No") << endl;
-  return 0;
-}
-```
-
 ## 输出截图
-![1.pic](./1.png)
+![1.png](./1.png)
 
 ## 其他功能
 - 排序 直接调用 STL 的 sort 函数
